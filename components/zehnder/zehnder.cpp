@@ -102,7 +102,7 @@ void ZehnderRF::setup() {
   rfConfig = this->rf_->getConfig();
 
   rfConfig.band = true;
-  rfConfig.channel = 118;
+  rfConfig.channel = 117;
 
   // // CRC 16
   rfConfig.crc_enable = true;
