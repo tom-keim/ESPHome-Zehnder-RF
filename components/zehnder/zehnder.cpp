@@ -102,7 +102,7 @@ void ZehnderRF::setup() {
   rfConfig = this->rf_->getConfig();
 
   rfConfig.band = true;
-  rfConfig.channel = 117;
+  rfConfig.channel = 118;
 
   // // CRC 16
   rfConfig.crc_enable = true;
@@ -330,7 +330,7 @@ void ZehnderRF::rfHandleReceived(const uint8_t *const pData, const uint8_t dataL
           break;
 
         default:
-          ESP_LOGE(TAG, "Discovery: Received unknown frame type 0x%02X from ID 0x%02X", pResponse->command,
+          ESP_LOGE(TAG, "Discovery: Again, Received unknown frame type 0x%02X from ID 0x%02X", pResponse->command,
                    pResponse->tx_id);
           break;
       }
