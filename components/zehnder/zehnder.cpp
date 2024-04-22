@@ -294,6 +294,8 @@ void ZehnderRF::rfHandleReceived(const uint8_t *const pData, const uint8_t dataL
       ESP_LOGD(TAG, "DiscoverStateWaitForJoinResponse");
       switch (pResponse->command) {
         case FAN_FRAME_0B:
+              ESP_LOGD(TAG, "special-DEBUG: TXID: 0x%02X on network ID 0x%08X rxtype:0x%08X", pResponse->tx_id,
+                     this->config_.fan_networkId,pResponse->tx_type);
           if ((pResponse->rx_type == this->config_.fan_my_device_type) &&
               (pResponse->rx_id == this->config_.fan_my_device_id) &&
               (pResponse->tx_type == this->config_.fan_main_unit_type) &&
